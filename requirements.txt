@@ -1,0 +1,9 @@
+torch>=2.0
+numpy
+scipy
+gmpy2
+numba
+joblib
+opensmile
+pandas
+scikit-learn
