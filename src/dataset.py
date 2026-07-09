@@ -1,7 +1,3 @@
-"""
-Load the per-client feature partitions written by prepare_data.py.
-"""
-
 import os
 import numpy as np
 import torch
