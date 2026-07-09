@@ -1,20 +1,3 @@
-"""
-Homomorphic-encryption helpers for SEFL.
-
-These wrap the Paillier primitives in crypto/paillier.py with the operations the
-FL loop actually needs:
-
-  - flatten a list of gradient tensors into one vector (remembering the shapes)
-  - encrypt that vector under a client's public key
-  - aggregate several encrypted vectors on the server by homomorphic addition,
-    WITHOUT decrypting (the server only ever sees ciphertext)
-  - decrypt the aggregated vector back to plain gradients on the client
-
-Paillier is additively homomorphic: Enc(a) + Enc(b) decrypts to a + b. That is
-exactly what the server needs to sum client gradients (Algorithm 1, line:
-E_g = E_1 (+) E_2 (+) ... (+) E_K).
-"""
-
 import numpy as np
 import torch
 from joblib import Parallel, delayed
