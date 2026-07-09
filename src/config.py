@@ -1,8 +1,3 @@
-"""
-All SEFL settings in one place. Values follow the paper
-(Section 4, "Use-case Description and Simulation Setting").
-"""
-
 # --- Federated setup ---------------------------------------------------------
 NUM_CLIENTS = 91            # one client per CREMA-D speaker
 CLIENTS_PER_ROUND = 20     # K selected clients each round
