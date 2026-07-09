@@ -1,22 +1,3 @@
-"""
-SEFL training: FedSGD with per-layer gradient pruning and Paillier encryption.
-
-One round (Algorithm 1):
-  - the key generation centre makes a fresh Paillier key pair (the paper rotates
-    keys every round); all selected clients in the round share it
-  - each selected client computes its local gradient, prunes it, encrypts it
-  - the server homomorphically sums the encrypted gradients (ciphertext only)
-  - clients decrypt the aggregate and the global model steps: w <- w - eta * mean_grad
-
-The encrypted path and a plaintext path give identical results, because the
-homomorphic sum decrypts to exactly the plaintext sum. The plaintext path exists
-only so you can run long accuracy experiments quickly; the encrypted path is the
-real SEFL and is what the efficiency/timing numbers come from.
-
-    python main.py --key_size 128 --pruning 60 --rounds 200
-    python main.py --pruning 60 --no-encrypt          # fast accuracy run
-"""
-
 import os
 import time
 import argparse
