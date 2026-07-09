@@ -1,11 +1,3 @@
-"""
-SER model: a small multilayer perceptron.
-
-Two dense layers [256, 128] with ReLU and 0.2 dropout, then a 4-way classifier,
-exactly as described in the paper (Section 4.1). Input is the 988-dimensional
-OpenSMILE emobase feature vector.
-"""
-
 import torch
 import torch.nn as nn
 
