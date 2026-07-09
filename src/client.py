@@ -1,17 +1,3 @@
-"""
-SEFL client.
-
-Each round a client:
-  1. loads the current global weights and computes its local gradient (FedSGD)
-  2. prunes the gradient by magnitude, per layer (Algorithm 2)
-  3. encrypts the pruned gradient under the round's public key
-and sends the ciphertext to the server. After the server returns the aggregated
-ciphertext, the client decrypts it with the shared private key.
-
-The client never sends a plaintext gradient, and the server never gets the
-private key - that is what protects against the honest-but-curious server.
-"""
-
 from collections import OrderedDict
 
 import torch
